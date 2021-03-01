@@ -3,15 +3,8 @@ import Link from "next/link";
 export function Home() {
   return (
     <div>
-      <h1>Hello</h1>
-
-      <Link href="/people">
-        <a>People</a>
-      </Link>
-
-      <hr />
-      <Link href="/vehicles">
-        <a>Vehicles</a>
+      <Link href="/users">
+        <a>Administrar Usuários</a>
       </Link>
     </div>
   );

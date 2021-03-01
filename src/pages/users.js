@@ -30,8 +30,18 @@ export default function Users({ users }) {
   const [userData, setUserData] = useState(null);
   const [userList, setUserList] = useState(null);
   const classes = useStyles();
-  useEffect(() => {
-    setUserList(users);
+  useEffect(async () => {
+    const loadData = async () => {
+      console.log(users?.lenght);
+      if (!users) {
+        let userDataBase = await loadUsers();
+        setUserList(userDataBase);
+      } else {
+        setUserList(users);
+      }
+    };
+
+    loadData();
   }, []);
   const load = async () => {
     let users = await loadUsers();
